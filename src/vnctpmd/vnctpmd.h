@@ -171,6 +171,8 @@ public:
 
     int exit();
 
+    string GetApiVersion();
+
     string getTradingDay();
 
     void registerFront(string pszFrontAddress);

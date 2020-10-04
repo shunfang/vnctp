@@ -8277,6 +8277,12 @@ int TdApi::exit()
     return 1;
 };
 
+string TdApi::GetApiVersion()
+{
+    string ver = this->api->GetApiVersion();
+    return ver;
+};
+
 string TdApi::getTradingDay()
 {
     string day = this->api->GetTradingDay();
@@ -11158,6 +11164,7 @@ PYBIND11_MODULE(vnctptd, m)
         .def("init", &TdApi::init)
         .def("join", &TdApi::join)
         .def("exit", &TdApi::exit)
+        .def("GetApiVersion", &TdApi::GetApiVersion)
         .def("getTradingDay", &TdApi::getTradingDay)
         .def("registerFront", &TdApi::registerFront)
         .def("subscribePublicTopic", &TdApi::subscribePublicTopic)
