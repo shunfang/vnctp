@@ -1,5 +1,5 @@
 # vnctp
-vnpy 使用 的vnctp 封装
+vnpy 使用 的ctp python封装, 重写了编译脚本，可以通过cmake进行编辑
 
 ## 使用方法
 
