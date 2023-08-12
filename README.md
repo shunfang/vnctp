@@ -3,13 +3,24 @@ vnpy 使用 的ctp python封装, 重写了编译脚本，可以通过cmake进行
 
 ## 使用方法
 
-### 编译
+请先安装miniconda和msys2
+
+### CMake编译
 
 ``` 
-mkdir build
-cd build 
-cmake ..
-cmake build . --config release
+cmake .
+make
+```
+
+### 手动编译
+
+``` 
+g++ -c -o vnctpmd.o src/vnctpmd/vnctpmd.cpp -I /c/ProgramData/miniconda3/include -I ./include/
+g++ -shared -o vnctpmd.pyd vnctpmd.o -L ./lib -lthostmduserapi_se -L /c/ProgramData/miniconda3/ -lpython311
+
+g++ -c -o vnctptd.o src/vnctptd/vnctptd.cpp -I /c/ProgramData/miniconda3/include -I ./include/
+g++ -shared -o vnctptd.pyd vnctptd.o -L ./lib -lthosttraderapi_se -L /c/ProgramData/miniconda3/ -lpython311
+
 ```
 
 ### 使用
