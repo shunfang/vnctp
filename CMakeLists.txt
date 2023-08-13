@@ -10,12 +10,12 @@ FILE(GLOB MD_SRC_LIST "${PROJECT_SOURCE_DIR}/src/vnctpmd/*.cpp")
 # 指定头文件目录
 INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/include)
 # 附加python头文件
-INCLUDE_DIRECTORIES(/c/ProgramData/miniconda3/include)
+INCLUDE_DIRECTORIES(C:/ProgramData/miniconda3/include)
 
 # 添加共享库搜索路径
 LINK_DIRECTORIES(${PROJECT_SOURCE_DIR}/lib)
 # 附加python共享库
-LINK_DIRECTORIES(/c/ProgramData/miniconda3/)
+LINK_DIRECTORIES(C:/ProgramData/miniconda3/)
 
 # 指定输出动态库的目录位置
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/target)

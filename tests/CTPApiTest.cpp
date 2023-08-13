@@ -10,4 +10,5 @@ int main(){
     cout << CThostFtdcTraderApi::GetApiVersion() << endl;
 }
 
-//g++ ./tests/test.cpp -o test -L./lib -lthosttraderapi_se -I ./include/ctp/
+// compile command:
+// g++ ./tests/CTPApiTest.cpp -o test -L./lib -lthosttraderapi_se -I ./include/ctp/
