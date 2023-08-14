@@ -3,7 +3,7 @@ vnpy 使用 的ctp python封装, 重写了编译脚本，可以通过cmake进行
 
 ## 使用方法
 
-Windows下编译请先安装miniconda和MinGW-w64
+Windows下编译请先安装miniconda、clang和msvc
 Linux下编译请先安装python和gcc
 
 ### CMake编译
@@ -13,14 +13,14 @@ cmake .
 make
 ```
 
-### MinGW-w64手动编译
+### Windows手动编译
 
 ``` 
-g++ -c -fPIC -o vnctpmd.o src/vnctpmd/vnctpmd.cpp -I C:/ProgramData/miniconda3/include -I ./include/
-g++ -shared -o vnctpmd.pyd vnctpmd.o -L ./lib -lthostmduserapi_se -L C:/ProgramData/miniconda3/ -lpython311
+clang++ -c -o vnctpmd.o src/vnctpmd/vnctpmd.cpp -I C:/ProgramData/miniconda3/include -I ./include/
+clang++ -shared -o vnctpmd.pyd vnctpmd.o -L ./lib -lthostmduserapi_se -L C:/ProgramData/miniconda3/libs
 
-g++ -c -fPIC -o vnctptd.o src/vnctptd/vnctptd.cpp -I C:/ProgramData/miniconda3/include -I ./include/
-g++ -shared -o vnctptd.pyd vnctptd.o -L ./lib -lthosttraderapi_se -L C:/ProgramData/miniconda3/ -lpython311
+clang++ -c -o vnctptd.o src/vnctptd/vnctptd.cpp -I C:/ProgramData/miniconda3/include -I ./include/
+clang++ -shared -o vnctptd.pyd vnctptd.o -L ./lib -lthosttraderapi_se -L C:/ProgramData/miniconda3/libs
 
 ```
 
