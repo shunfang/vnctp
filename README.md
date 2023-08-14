@@ -4,6 +4,7 @@ vnpy 使用 的ctp python封装, 重写了编译脚本，可以通过cmake进行
 ## 使用方法
 
 Windows下编译请先安装miniconda、clang和msvc
+
 Linux下编译请先安装python和gcc
 
 ### CMake编译
@@ -36,7 +37,7 @@ g++ -shared -o vnctptd.so vnctptd.o -L ./lib -lthosttraderapi_se
 ```
 ### 使用
 
-将vnctpmd.pyd 和 vnctptd.pyd 复制出来， 和 thostmduserapi_se.dll thosttraderapi_se.dll 放在同一目录。
+将vnctpmd.pyd 和 vnctptd.pyd 复制出来(Linux下是vnctpmd.so和vnctptd.so)，并和thostmduserapi_se.dll thosttraderapi_se.dll放在同一目录(Linux下是libthostmduserapi_se.so 和 libthosttraderapi_se.so)。
 
 ```
 from vnctpmd import MdApi
